@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { Menu, X, Home, User, Briefcase, Code, Mail } from "lucide-react";
+import { Menu, X, Home, User, Briefcase, Mail, FileDown } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { useTheme } from "./ThemeProvider";
-import YPBDark from "../assets/YPB-Dark.png";
-import YPBLight from "../assets/YPB-Light.png";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme } = useTheme();
+
+  const RESUME_URL =
+    "https://drive.google.com/uc?export=download&id=17edQaWBgOza-7xzYq8GAQ-FqROmu7dXX";
 
   const navItems = [
-    { icon: Home, label: "Home", href: "#home" },
-    { icon: User, label: "About", href: "#about" },
-    { icon: Briefcase, label: "Experience", href: "#experience" },
-    { icon: Code, label: "Projects", href: "#projects" },
-    { icon: Mail, label: "Contact", href: "#contact" },
+    { icon: Home, label: "Home", href: "#home", external: false },
+    { icon: User, label: "About", href: "#about", external: false },
+    { icon: Briefcase, label: "Experience", href: "#experience", external: false },
+    { icon: FileDown, label: "Resume", href: RESUME_URL, external: true },
+    { icon: Mail, label: "Contact", href: "#contact", external: false },
   ];
 
   const scrollToSection = (href: string) => {
@@ -31,27 +30,36 @@ export const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <button
             onClick={() => scrollToSection("#home")}
-            className="h-16 w-16 hover:scale-105 transition-transform duration-200"
+            className="h-16 px-4 flex items-center justify-center text-xl font-bold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:scale-105 transition-all duration-200"
           >
-            <img
-              src={theme === "dark" ? YPBDark : YPBLight}
-              alt="Yashpreet Bathla"
-              className="w-16 h-16 object-cover"
-            />
+            {"{PP}"}
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-              >
-                <item.icon className="w-4 h-4" />
-                <span>{item.label}</span>
-              </button>
-            ))}
+          <nav className="hidden md:flex space-x-8 items-center">
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                >
+                  <item.icon className="w-4 h-4" />
+                  <span>{item.label}</span>
+                </a>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => scrollToSection(item.href)}
+                  className="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                >
+                  <item.icon className="w-4 h-4" />
+                  <span>{item.label}</span>
+                </button>
+              )
+            )}
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -75,16 +83,30 @@ export const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
             <nav className="py-4 space-y-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="flex items-center space-x-2 w-full px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
-                >
-                  <item.icon className="w-4 h-4" />
-                  <span>{item.label}</span>
-                </button>
-              ))}
+              {navItems.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center space-x-2 w-full px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.label}</span>
+                  </a>
+                ) : (
+                  <button
+                    key={item.label}
+                    onClick={() => scrollToSection(item.href)}
+                    className="flex items-center space-x-2 w-full px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.label}</span>
+                  </button>
+                )
+              )}
             </nav>
           </div>
         )}

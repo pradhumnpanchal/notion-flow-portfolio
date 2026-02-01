@@ -35,7 +35,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -107,25 +107,6 @@ export const Contact: React.FC = () => {
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Connect with me
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                  <X className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div>
-                  <p className="font-medium text-gray-900 dark:text-white">
-                    X
-                  </p>
-                  <a
-                    href="https://x.com/yashpreetOnX"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
-                    Follow me
                   </a>
                 </div>
               </div>

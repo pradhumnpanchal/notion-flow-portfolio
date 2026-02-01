@@ -5,7 +5,7 @@ import { personalInfo } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
               Quick Links
             </h4>
             <div className="space-y-2">
-              {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((link) => (
+              {['Home', 'About', 'Experience', 'Contact'].map((link) => (
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
@@ -69,15 +69,6 @@ export const Footer: React.FC = () => {
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>LinkedIn</span>
-              </a>
-              <a
-                href="https://x.com/yashpreetOnX"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-              >
-                <X className="w-4 h-4" />
-                <span>X</span>
               </a>
             </div>
           </div>

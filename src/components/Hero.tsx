@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ArrowDown, Download, ExternalLink } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 import { BackForthTyping } from "./BackForthTyping";
-import profileImage from "../assets/CAM00614_Original.jpeg";
+import profileImage from "../assets/pradhumn.jpeg";
 import { ViewIndicator } from "./ViewIndicator";
 
 interface HeroProps {

@@ -6,7 +6,8 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const RESUME_URL =
-    "https://drive.google.com/uc?export=download&id=17edQaWBgOza-7xzYq8GAQ-FqROmu7dXX";
+    "https://drive.google.com/uc?export=download&id=1afKpaeKNYaGOJS5nECprEms9yTGmZ3Gt";
+
 
   const navItems = [
     { icon: Home, label: "Home", href: "#home", external: false },

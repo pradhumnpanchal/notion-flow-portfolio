@@ -251,10 +251,10 @@ export const experiences: Experience[] = [
     position: "Software Development Engineer II",
     duration: "May 2024 - Nov 2025",
     description: [
-      "Technical lead for the Funds Management System (FMS), a core platform with 153 APIs handling portfolios, orders, transactions, trades, withdrawals, deposits, cash flows, and daily NAV computation for 200K+ users.",
+      "Technical lead for the Funds Management System (FMS), a core platform with 100+ APIs handling portfolios, orders, transactions, trades, withdrawals, deposits, cash flows, and daily NAV computation for 200K+ users.",
       "Led end-to-end delivery of multiple business-critical portfolio launches, contributing to a 10% increase in AUM and enabling new investment products across Singapore and Hong Kong.",
       "Drove architectural improvements to enhance scalability, reliability, and latency, including resolving data consistency issues and optimizing high-traffic APIs.",
-      "Spearheaded initiatives to improve team DORA metrics by applying engineering best practices and learnings from prior Amazon experience.",
+      "Spearheaded initiatives to improve team DORA metrics by applying best practices from prior Amazon experience and introducing AI-driven code reviews using coderabbit.ai, improving code quality and development velocity.",
       "Owned production operations for FMS, including incident response, root cause analysis, and long-term fixes to improve system stability and customer trust.",
     ],
     technologies: [
